@@ -39,18 +39,66 @@ JSX Tag:
 - e.g. `<Field />`
 
 JSX:
+
 - can tell react to create a normal HTML element
 - can tell react to show another component (e.g. JSX tag)
 - JSX to create HTML begins with a lowercase character
 - JSX to show another component begins with a capital letter `<ContactList />`
 
-
 **How does a react app start up?**
 
 1. all of your project's JS files are bundled together into a single file, then placed onto a server
-    - this is done bc it is inefficient to send multiple files to a user's browser
+   - this is done bc it is inefficient to send multiple files to a user's browser
 2. user makes a request to the server and gets an HTML file + the bundle
+
+- client sends request to webserver
+- webserver responds with an `index.html` file
+  - the index.html file has some script tags or link tags that tell the browser to fetch more data from server
+- 2nd request from client to server
+- server returns bundle file
+
 3. user's browser executes your code
 
+Notes on index.html:
 
+- there is a <div> tag within the <body> that has `id="root"` attribute
+- `index.js` is the first file that gets loaded when the application starts
+- `index.js` is within the `bundle.js` file
+-
 
+React startup process:
+
+- find the div with id of `root` in the DOM
+  - `const rootElement = document.getElementById('root')`
+- Tell react to take control of that element
+  - i.e. we will render our application into that element!
+  - `const root = createRoot(rootElement)`
+- Tell react to get JSX from the App component, turn it into HTML, and show it in the root
+  - `root.render(<App />)`
+
+**What are the `useState` functions?**
+
+```javascript
+// indicates that language can change over time
+// es is the default value for language
+const [language, setLanguage] = useState("es");
+// indicates that text can change over time
+const [text, setText] = useState("");
+```
+
+- `useState` is a function that works with React's `state` system
+- State is like a variable in React
+- state is used to store data that changes over time
+- when state changes, React automatically updates content on the screen
+
+State within our sample application:
+
+- the text the user typed into the text input
+- the language the user selected to translate text to
+- the result of the translation
+
+**How did we translate the text from one language to another?**
+
+- Google translate API
+- The Translate component was watching for `text` and `language` states
+- if either of them changed, then an API call was made to Google Translate API with updated text/language
