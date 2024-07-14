@@ -1,4 +1,4 @@
-# Creatin Content with JSX
+# Creating Content with JSX
 
 - we are using the `jsx/` react project created in section-1
 
@@ -10,7 +10,7 @@
 
 `React` library:
 
-- Library taht defines what a component is and how multiple components work together
+- Library that defines what a component is and how multiple components work together
 
 `ReactDom` library:
 
