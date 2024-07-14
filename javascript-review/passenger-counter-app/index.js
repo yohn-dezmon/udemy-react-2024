@@ -70,3 +70,39 @@ function increment() {
     // IMPORTANT!:
     document.getElementById("count-el").innerText = count;
 }
+
+function save() {
+    console.log(count)
+}
+
+let username = "Per"
+let message = "You have three new notifications"
+let messageToUser = message + ", " + username + "!"
+
+console.log(messageToUser)
+
+/*
+You CAN mix numbers and strings with + operator and also console.log()
+*/
+
+let _name = 42
+let _greeting = "Hi, my name is "
+let myGreeting = _greeting + _name
+console.log(myGreeting)
+
+// Grab the welcome-el paragraph and store it in a variable called welcomeEl
+
+// Create two variables (name & greeting) that contains your name
+// and the greeting we want to render on the page
+
+// Render the welcome message using welcomeEl.innerText
+
+let welcomeEl = document.getElementById("welcome-el");
+
+let name = "John";
+let greeting = "Sup?";
+
+welcomeEl.innerText = "Hi " + name + ", " + greeting;
+welcomeEl.innerText + "👋";
+
+

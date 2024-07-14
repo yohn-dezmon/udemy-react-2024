@@ -42,9 +42,29 @@ for (let i = 0; i < 3; i++) {
 }
 ```
 
-
 how do I change the `count-el` in the HTML to reflect the new count?
+
 - `count-el` is a value for the id attribute within the h2 tag
+
 ```javascript
 document.getElementById("count-el").innerText = count;
 ```
+
+document.getElementById:
+
+- if you do `console.log(document.getElementById("count-el"))` it will output the HTML element/tag to the console!
+- `<h2 id='count-el'>`
+
+DOM:
+
+- document object model
+- use JS to modify a website
+- document: HTML document
+- object: the document keyword in JS is of the type `object`
+- model: representation of the HTML document within the JS code `document`
+
+
+onclick:
+- this is an attribute which allows you to link an HTML element with a JS function
+- `onclick="save()"`
+
