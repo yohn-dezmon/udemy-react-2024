@@ -102,3 +102,49 @@ State within our sample application:
 - Google translate API
 - The Translate component was watching for `text` and `language` states
 - if either of them changed, then an API call was made to Google Translate API with updated text/language
+
+Node:
+
+- `node -v`
+
+Creating a new react app:
+
+- `npx create-react-app <project-name>`
+- takes a few minutes
+
+Starting up a NodeJS server running react:
+
+- cd jsx
+- `npm start`
+- available via `localhost:3000`
+- CTRL+C to stop
+
+create-react-app explanation:
+
+- with the `npx create-react-app <project-name>` command you create a new NodeJS/React project
+- index.js, App.js and reportWebVitals.js --> these contain code that a browser doesn't know how to execute. JSX != JS. Your browser doesn't know how to execute JSX.
+- the purpose of using NodeJS is ultimately to take the JSX --> JS
+- JS can run inside the browser
+- converting JSX --> JS is done by the `dev server`
+- `Babel` is the tool that converts JSX to JS
+- `Webpack` is a tool to merge all project files into a single file (outputs bundle.js or whatever you choose to call it)
+
+index.js:
+
+- first file that gets executed when our app runs
+
+index.html:
+
+- skeleton for the React app
+
+package.json:
+
+- lists dependencies our app needs
+
+package-lock.json:
+
+- list dependencies our app needs
+
+node-modules:
+
+- contains the dependencies our app needs
