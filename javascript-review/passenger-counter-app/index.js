@@ -106,3 +106,30 @@ welcomeEl.innerText = "Hi " + name + ", " + greeting;
 welcomeEl.innerText + "👋";
 
 
+
+// 1. Grab the save-el paragrah and store it in a variable called saveEl
+let saveEl = document.getElementById("save-el")
+let countEl = document.getElementById("count-el")
+let _count = 0
+
+console.log(saveEl)
+
+function increment() {
+    _count += 1
+    countEl.innerText = count
+}
+
+function save() {
+    let countStr = _count + " - "
+    // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+    // 3. Render the variable in the saveEl using innerText
+    saveEl.textContent += countStr
+
+    // setting the count back to 0 after each save!
+    // IMPORTANT: use countEl not saveEl
+    countEl.textContent = 0;
+    count = 0;
+
+    // NB: Make sure to not delete the existing content of the paragraph
+    console.log(count)
+}

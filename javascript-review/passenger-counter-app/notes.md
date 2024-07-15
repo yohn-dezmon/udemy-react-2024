@@ -63,8 +63,33 @@ DOM:
 - object: the document keyword in JS is of the type `object`
 - model: representation of the HTML document within the JS code `document`
 
-
 onclick:
+
 - this is an attribute which allows you to link an HTML element with a JS function
 - `onclick="save()"`
 
+innerText alternative mdn:
+
+- `Node.textContent`
+- Node here means HTML element (sort of)
+- innerText only shows "human readable" elements
+- innerText is aware of styling and won't return text of hidden elements
+  - a space is not considered "human readable"
+
+Javascript memory:
+
+- a javascript script will remember previous state until you refresh the page!
+
+Currently we are using the `onClick` event listener on an HTML element:
+
+- however this is not used in production codebases
+- there are better ways to do this such that HTML and Javascript are easier to maintain separately
+
+Netlify:
+
+- you can deploy React apps with it
+- Change title
+- Background image
+- Font (from list) -- make it the first in the list
+- update button colors/appearance (width, border, etc.)
+- wrap a div around the HTML, add a max width (you should do this before deploying things)
