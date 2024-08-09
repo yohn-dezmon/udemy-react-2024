@@ -93,3 +93,15 @@ Netlify:
 - Font (from list) -- make it the first in the list
 - update button colors/appearance (width, border, etc.)
 - wrap a div around the HTML, add a max width (you should do this before deploying things)
+
+Images:
+
+- she updated the image by going to `body { background-image: url("filename.jpg");}` in the `.css` file
+- she set height to 100vh --> it will take up 100% of the current height.
+- margin: auto --> stays centered.
+
+More Netlify Notes:
+
+- connect it to github
+- connect it to a repo
+- then you can put JS/CSS/HTML files in a repo, and deploy it, and voila! You have a website on the internet! That's awesome!
