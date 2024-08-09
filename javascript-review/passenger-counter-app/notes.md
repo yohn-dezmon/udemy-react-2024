@@ -105,3 +105,15 @@ More Netlify Notes:
 - connect it to github
 - connect it to a repo
 - then you can put JS/CSS/HTML files in a repo, and deploy it, and voila! You have a website on the internet! That's awesome!
+
+Review:
+
+- <script src="file.js"> tag (!!) </script>
+- variables are set with `let`
+- `console.log()` to print things
+- `function save() { }`
+- an `onclick` attribute in a HTML tag allows you to set a function as a callback
+- `onclick=save()`
+- `document` --> this is the DOM
+- `document.getElementById()`
+- `document.getElementById().textContent`
