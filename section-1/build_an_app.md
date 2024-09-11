@@ -64,7 +64,6 @@ Notes on index.html:
 - there is a <div> tag within the <body> that has `id="root"` attribute
 - `index.js` is the first file that gets loaded when the application starts
 - `index.js` is within the `bundle.js` file
--
 
 React startup process:
 
@@ -148,3 +147,5 @@ package-lock.json:
 node-modules:
 
 - contains the dependencies our app needs
+
+Components are written in separate files, App.js is the main component that coordinates all of the other components.

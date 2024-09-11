@@ -29,7 +29,7 @@ Button in HTML:
 Javascript functions:
 
 - function functionName() { }
-- I think javascript uses CamelCase by default...
+- javascript uses CamelCase by default...
 
 for loops in javascript:
 
