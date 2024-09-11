@@ -17,3 +17,11 @@
 - Library that knows how to get a component to show up in the browser
 - this is useful for getting React to display properly in web browser vs. phone
   - mobile --> ReactNative ...
+
+`el` is short for element.  
+
+## Debugging
+
+- Inpect > Console > look for error messages.  
+
+

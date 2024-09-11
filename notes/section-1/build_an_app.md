@@ -148,6 +148,8 @@ node-modules:
 
 - contains the dependencies our app needs
 
+## 2024-09-11 REVIEW:
+
 Components are written in separate files, App.js is the main component that coordinates all of the other components.
 
 file that contains all of of your JS files (component files) is called the bundle.js file or "App Bundle". The actual file usually has a name like `lijasdoifjoidj.js`
@@ -172,3 +174,26 @@ the `State` system is one of the most complicated aspects of React.
 - Text
 - Language
 - Output Translation Text
+
+Each time the text changes, we make an API request to get the translated data from a language translation service.
+
+`node -v` -- gives you node version.
+
+To create a new node project:
+`npx create-react-app <project name>`
+
+Our project:
+`npx create-react-app jsx`
+
+Start up react project with NodeJS:
+`npm start`
+
+Your browser doesn't know how to execute JSX.  
+We `transpile` the JSX to JS.
+
+The development server (NodeJS) converts JSX to JS:
+
+- with `Babel` (JSX -> JS)
+- and `Webpack` (merge all project files into a single file)
+- it outputs the `bundle.js` file
+
