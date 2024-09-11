@@ -149,3 +149,26 @@ node-modules:
 - contains the dependencies our app needs
 
 Components are written in separate files, App.js is the main component that coordinates all of the other components.
+
+file that contains all of of your JS files (component files) is called the bundle.js file or "App Bundle". The actual file usually has a name like `lijasdoifjoidj.js`
+
+The `index.html` file is in the `public/` directory.
+
+The `index.js` file is the first file that gets executed when the app starts up.
+
+`<div id="root"></div>` --> in `index.html`.
+
+```javascript
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+root.render(<App />);
+```
+
+^ that code is in `index.js`  
+the `State` system is one of the most complicated aspects of React.
+
+3 pieces of data that were changing in the app (State!):
+
+- Text
+- Language
+- Output Translation Text
