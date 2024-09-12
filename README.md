@@ -4,7 +4,7 @@ My notes and exercises from the Udemy course created by Stephen Grider.
 
 # Creating a new React project
 
-To create a new React project with NodeJS:
+To create a new React project with NodeJS:  
 `npx create-react-app <project name>`
 
 # Starting up a React app
