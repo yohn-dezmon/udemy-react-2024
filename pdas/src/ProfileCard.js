@@ -1,5 +1,5 @@
 // this doesn't need to be called `props` but is by convention
-function ProfileCard({ title, handle, image }) {
+function ProfileCard({ title, handle, image, description }) {
     return (
         <div className="card">
             <div className="card-image">
@@ -13,7 +13,11 @@ function ProfileCard({ title, handle, image }) {
                     <p className="title is-4">{title}</p>
                     <p className="subtitle is-6">{handle}</p>
                 </div>
+                <div className="content">
+                    {description}
+                </div>
             </div>
+
         </div>
     );
 }
