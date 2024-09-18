@@ -1,11 +1,14 @@
 import AnimalShow from './AnimalShow';
 
 function App() {
+    // this is an arrow function
+    const handleClick = () => {
+        console.log('Button was clicked');
+    };
 
     return (
         <div>
-            Show Animal List here
-            <AnimalShow />
+            <button onClick={handleClick}>Add Animal</button>
         </div>
     );
 }
