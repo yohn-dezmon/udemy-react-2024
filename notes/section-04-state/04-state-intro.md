@@ -1,4 +1,9 @@
-import AnimalShow from './AnimalShow';
+# State in React
+
+- rerendering a component with a variable that has been updated by a user's action
+
+
+```javascript
 import { useState } from 'react';
 
 function App() {
@@ -19,5 +24,4 @@ function App() {
         </div>
     );
 }
-
-export default App;
+```
