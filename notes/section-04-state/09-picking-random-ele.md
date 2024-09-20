@@ -1,5 +1,8 @@
 # Picking a Random Element
 
+- you shouldn't modify pieces of state, e.g. `animals` directly
+- instead, you iteratively recreate `animals` with each `setAnimals` call using the `...` operator
+
 ```javascript
 const [animals, setAnimals] = useState([]);
 
