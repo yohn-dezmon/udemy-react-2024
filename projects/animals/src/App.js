@@ -1,20 +1,33 @@
-import AnimalShow from './AnimalShow';
 import { useState } from 'react';
+import AnimalShow from './AnimalShow';
+// helper function 
+function getRandomAnimal() {
+    const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
+
+    return animals[Math.floor(Math.random() * animals.length)];
+}
 
 function App() {
-    // default of count is set to 0
-    const [count, setCount] = useState(0);
+    const [animals, setAnimals] = useState([]);
 
     // this is an arrow function
     const handleClick = () => {
-        setCount(count + 1);
+        // JS syntax for updating a list
+        // ... creates a brand new array
+        // animals.push(getRandomAnimal()) is an alternative
+        // but the above MODIFIES a piece of state
+        setAnimals([...animals, getRandomAnimal()]);
     };
+
+    const renderedAnimals = animals.map((animal, index) => {
+        return <AnimalShow type={animal} key={index} />
+    });
 
     return (
         <div>
             <button onClick={handleClick}>Add Animal</button>
             <div>
-                Number of Animals: {count}
+                {renderedAnimals}
             </div>
         </div>
     );

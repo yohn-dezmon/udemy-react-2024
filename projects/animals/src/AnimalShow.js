@@ -1,8 +1,9 @@
 
-function AnimalShow() {
+// { type } is object destructuring from the `props` object
+function AnimalShow({ type }) {
     return (
         <div>
-            AnimalShow
+            {type}
         </div>
     );
 }
