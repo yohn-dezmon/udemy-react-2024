@@ -25,15 +25,33 @@ function AnimalShow({ type }) {
     const handleClick = () => {
         setClicks(clicks + 1);
     };
+
+    // how can I assign multiple actions to the same <div> ?
+    const handleWheel = (event) => {
+        if (event.deltaY > 0) {
+        setClicks(clicks - 1);
+        }
+    }
     
     return (
-        <div onClick={handleClick}>
+        <div onClick={handleClick} onWheel={handleWheel}
+        size={{ 
+            height: '300px',  // Make the div scrollable
+            overflow: 'auto', 
+            border: '1px solid black',
+            textAlign: 'center'
+        }}
+        >
             <img alt="animal" src={svgMap[type]} />
             <img 
                 alt="heart" 
                 src={heart}
+                // how can I decrease the width with scroll 
+                // and increase the width with clicks
                 style={{ width: 10 + 10 * clicks + 'px' }} 
             />
+            
+
         </div>
     );
 }
