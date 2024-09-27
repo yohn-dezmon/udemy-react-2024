@@ -1,3 +1,4 @@
+import './AnimalShow.css';
 import { useState } from 'react';
 import bird from './svg/bird.svg';
 import cat from './svg/cat.svg';
@@ -41,14 +42,16 @@ function AnimalShow({ type }) {
             border: '1px solid black',
             textAlign: 'center'
         }}
+        className="animal-show"
         >
-            <img alt="animal" src={svgMap[type]} />
+            <img alt="animal" src={svgMap[type]} className="animal" />
             <img 
                 alt="heart" 
                 src={heart}
                 // how can I decrease the width with scroll 
                 // and increase the width with clicks
                 style={{ width: 10 + 10 * clicks + 'px' }} 
+                className="heart"
             />
             
 

@@ -1,3 +1,6 @@
+// for CSS we don't want to read it into a variable
+// we want to load the CSS directly into the browser
+import './App.css';
 import { useState } from 'react';
 import AnimalShow from './AnimalShow';
 // helper function 
@@ -24,9 +27,9 @@ function App() {
     });
 
     return (
-        <div>
+        <div className="app">
             <button onClick={handleClick}>Add Animal</button>
-            <div>
+            <div className="animal-list">
                 {renderedAnimals}
             </div>
         </div>
