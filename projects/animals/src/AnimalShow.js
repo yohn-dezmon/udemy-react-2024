@@ -38,14 +38,13 @@ function AnimalShow({ type }) {
     }
     
     return (
-        <div onClick={handleClick} onWheel={handleWheel}
+        <div className="animal-show" onClick={handleClick} onWheel={handleWheel}
         size={{ 
             height: '300px',  // Make the div scrollable
             overflow: 'auto', 
             border: '1px solid black',
             textAlign: 'center'
         }}
-        className="animal-show"
         >
             <img alt="animal" src={svgMap[type]} className="animal" />
             <img 
