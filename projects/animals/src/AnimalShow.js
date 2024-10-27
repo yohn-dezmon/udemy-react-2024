@@ -29,7 +29,7 @@ function AnimalShow({ type }) {
 
     // how can I assign multiple actions to the same <div> ?
     const handleWheel = (event) => {
-        if (event.deltaY > 0) {
+        if (event.deltaY > 1) {
         setClicks(clicks - 1);
         }
     }
