@@ -29,6 +29,9 @@ function AnimalShow({ type }) {
 
     // how can I assign multiple actions to the same <div> ?
     const handleWheel = (event) => {
+        // what is deltaY?
+        // this represents the vertical scroll amount (pixels)
+        // deltaY > 1 checks if the scroll is downward by any significant amount
         if (event.deltaY > 1) {
         setClicks(clicks - 1);
         }
@@ -50,6 +53,8 @@ function AnimalShow({ type }) {
                 src={heart}
                 // how can I decrease the width with scroll 
                 // and increase the width with clicks
+                // ans: have multiple event handlers on the same JSX component
+                // and update the same variable name
                 style={{ width: 10 + 10 * clicks + 'px' }} 
                 className="heart"
             />
