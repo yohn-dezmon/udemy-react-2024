@@ -50,6 +50,8 @@ An example of an execption to this rule:
 - you pass in a prop with key = "onClick" and value = `handleClick`
 - in the button, when a user clicks on it, we call the `onClick` function defined from props and go back into the App component (into `handleClick`)
 
+the prop value is a function!
+
 # Child to Parent communication
 
 - we will define a callback function in the parent component `App`
@@ -59,7 +61,7 @@ An example of an execption to this rule:
 - the SearchBar component has a button that will be tied to the `onSubmit` prop
 - it will pass in a `term` to the `handleSubmit` function defined in App
 
-general idea: "Pass an event handler down, call handler when something happens"
+general idea: **"Pass an event handler down, call handler when something happens"**
 
 - we'll have the term be sent to `handleSubmit` when enter is clicked
 - within handleSubmit we will call `searchImages(term)`, and return list of images
@@ -70,3 +72,14 @@ for now we are going to use a button instead of using enter key.
   - within that handler, we call the `onSubmit(term)` prop
   - this ends up executing hte `handleSubmit` handler defined in App
   - WHOA lots of nested functions lol
+
+# Function Flow
+
+User clicks button
+
+```bash
+`onClick` attribute on button senses this
+  `handleClick` handler is called
+    `onSubmit(term)` is called
+      `handleSubmit(term)` in App.js is called
+```
