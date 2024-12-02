@@ -15,8 +15,9 @@ function SearchBar({ onSubmit }) {
     const [term, setTerm] = useState(""); 
 
     const handleFormSubmit = (event) => {
+        // preventing form submission
         event.preventDefault();
-        onSubmit('cars');
+        onSubmit(term);
     };
 
     const handleChange = (event) => {
