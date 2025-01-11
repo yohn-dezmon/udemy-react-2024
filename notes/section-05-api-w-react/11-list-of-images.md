@@ -26,3 +26,24 @@ State System reminders:
 1. when you update state, the component and all of its children are rerendered (!!)
 2. from the perspective of the `App` component, `images` is a state object
 3. from the perspective of the `ImageList` component, `images` is a prop within the props system
+
+# Buidling a list of images
+
+Mapping function:
+
+- passing each image into a ImageShow component
+
+# REVIEW OF PREVIOUS SLIDES
+
+- each time a user presses enter we'll make an API request to unsplash api
+- this returns a list of images which will be processed by ImageList
+- each image in this ImageList will be mapped to an ImageShow class
+- `axios` is used to make HTTP requests in JS
+  - `axios.get()` is an async func (returns a promise)
+
+```js
+const fetchData = async () => {
+  const response = await axios.get( ... );
+  console.log(response);
+}
+```

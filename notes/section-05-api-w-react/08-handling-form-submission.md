@@ -25,3 +25,10 @@ We want to prevent (2)
 - it's optional to use or not
 
 We can disable `event.preventDefault()`; to prevent (2)
+
+# REVIEW
+
+<form> <input /> </form> --> allows you to submit the data in the form via enter.
+- triggers a submit event (browser)
+- by default if you have various fields, hitting enter will attempt to return the values for all of the fields. It makes a request to myapp.com?email=asdf@asdf.com&password=asdf
+  - prevent this with event.preventDefault();

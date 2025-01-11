@@ -83,3 +83,32 @@ User clicks button
     `onSubmit(term)` is called
       `handleSubmit(term)` in App.js is called
 ```
+
+# REVIEW
+
+- `term` is the text input from user
+- `term` will be generated within SearchBar
+- `images` will be created within SearchBar bc its the response from the API
+  - we need to pass `images` back to App, then pass it down into ImageList.
+  - actually nevermind, we just pass `term` to App, and within App we call `searchImages()` (api), which reterns `images`.
+- sibling components in react cannot communicate directly
+
+Parent to child:
+
+- can be done via props
+
+Child to parent:
+
+- event handler flow
+
+Event handlers:
+
+- define the event handler in App.js
+- pass the event handler via props `onClick` into a child component
+- when an event happens, call `onClick` which calls `handleClick`
+
+Our app flow:
+
+- `handleSubmit` callback defined in App
+- `onSubmit` from props receives handleSubmit as avalue
+- a `term` from SearchBar is pass into `onSubmit` which calls `handleSubmit` which calls the `searchImages()` fn and then passes data into `ImageList`

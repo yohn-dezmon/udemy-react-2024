@@ -19,7 +19,7 @@ function App() {
       }
       setLoading(false);
     };
-    loadItems();
+    loadItems(); 
   }, [lastId]);
 
   // Handle button clicks
