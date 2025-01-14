@@ -47,3 +47,28 @@ const fetchData = async () => {
   console.log(response);
 }
 ```
+
+# First Render
+
+- `images` state is defaulted to `[]`
+- pass `images` to ImageList in the JSX, which is currently just `[]`
+- then when you call handleSubmit, it calls `setImages()` and this reloads `App` component
+
+# Second render
+
+- then you call ImageList again with updated `images`, and ImageList is rendered to the screen with the images
+- children components get re-rendered whenver parent gets rendered
+
+# BUILDING A LIST OF IMAGES
+
+- every image object from the API has an `id` property
+- we're going to map over the array
+-
+
+```js
+(image) => {
+  return <ImageShow image={image} />;
+};
+```
+
+- each child in a list, should have a unique `key` prop (!!)
