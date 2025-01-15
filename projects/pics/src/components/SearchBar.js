@@ -8,28 +8,29 @@ the name you define when calling the child component in the parent component.
 What does <input /> do ?
 - this allowws user to provide text input
 */
-import { useState } from 'react';
-
+import "./SearchBar.css";
+import { useState } from "react";
 
 function SearchBar({ onSubmit }) {
-    const [term, setTerm] = useState(""); 
+  const [term, setTerm] = useState("");
 
-    const handleFormSubmit = (event) => {
-        // preventing form submission
-        event.preventDefault();
-        onSubmit(term);
-    };
+  const handleFormSubmit = (event) => {
+    // preventing form submission
+    event.preventDefault();
+    onSubmit(term);
+  };
 
-    const handleChange = (event) => {
-        setTerm(event.target.value);
-    };
-    return (
-    <div>
-        <form onSubmit={handleFormSubmit}>
-            <input value={term} onChange={handleChange} />
-        </form>
+  const handleChange = (event) => {
+    setTerm(event.target.value);
+  };
+  return (
+    <div className="search-bar">
+      <form onSubmit={handleFormSubmit}>
+        <label>Enter Search Term</label>
+        <input value={term} onChange={handleChange} />
+      </form>
     </div>
-    );
+  );
 }
 
 export default SearchBar;
