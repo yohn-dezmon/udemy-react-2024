@@ -25,6 +25,7 @@ the reason that `books.push()` doesn't work is because before react re-renders, 
 # CHEAT SHEET
 
 https://state-updates.vercel.app/
+https://state-updates.vercel.app/
 
 # Adding elements to the start of an array
 
@@ -144,3 +145,72 @@ const updatedBookById = (id, newTitle) => {
 ```
 
 - when to use `===` in JS vs `==`?
+
+- in javascript, if you ever have duplicate keys, the earlier key will get removed
+
+# Why use the spread operator?
+
+- why not just set the value of a property in a state object?
+  Because if we update a property on an object, it is still the same object. React only checks to see if you have a new object or not, if it is the same object, react will not rerender.
+
+  FAILED ATTEMPT:
+
+```js
+const updateBookById = (id, title) => {
+  // TODO: Find a book in the 'books' array with the given id
+  const updatedBooks = books.map((book) => {
+    if (book.id === id) {
+      return { ...book, title: title };
+    }
+  });
+  // Update that books 'title' property
+  // Don't forget to update the 'books' state by calling 'setBooks'
+  setBooks(updatedBooks);
+};
+```
+
+SOLUTION:
+
+```js
+const updateBookById = (id, title) => {
+  const updatedBooks = books.map((book) => {
+    if (book.id === id) {
+      return { ...book, title: title };
+    }
+
+    // you still want to return books with their existing titles if they are not the desired book
+    return book;
+  });
+
+  setBooks(updatedBooks);
+};
+```
+
+# Adding, Changing or Removing Object Properties
+
+```js
+const [fruit, setFruit] = useState({ color: "red", name: "apple" });
+
+const changeColor = (color) => {
+  const updatedFruit = {
+    ...fruit,
+    color: color,
+  };
+
+  setFruit(updatedFruit);
+};
+```
+
+# Removing properties from an object
+
+```js
+const [fruit, setFruit] = useState({ color: "red", name: "apple" });
+
+const removeColor = () => {
+  // rest is the new variable name
+  // color is the field we're removing
+  const { color, ...rest } = fruit;
+
+  setFruit(rest);
+};
+```
