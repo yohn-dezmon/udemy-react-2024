@@ -9,10 +9,16 @@ function BookShow({ book, onDelete, onUpdate }) {
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
+  const handleUpdate = (updatedBook) => {
+    setShowEdit(!showEdit);
+    onUpdate(updatedBook);
+  };
   // conditional logic here...
   let content = <h3>{book.title}</h3>;
   if (showEdit) {
-    content = <BookEdit onUpdate={onUpdate} />;
+    content = (
+      <BookEdit showEdit={showEdit} book={book} onUpdate={handleUpdate} />
+    );
   }
   return (
     <div className="book-show">
