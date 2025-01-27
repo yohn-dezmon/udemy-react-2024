@@ -1,7 +1,7 @@
 import { useState } from "react";
 function BookEdit({ book, onUpdate }) {
   // don't default this to book.title ... idk why
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(book.title);
   const handleSubmit = (event) => {
     event.preventDefault();
     // book is a piece of state so I think this is necessary?
