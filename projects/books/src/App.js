@@ -24,14 +24,10 @@ function App() {
   };
 
   const updateBooks = (updatedBook) => {
-    // maybe filter out the book in question, then add back the updated one?
-    console.log("does it ever get here?");
     const filteredBooks = books.filter((book) => {
       return book.id !== updatedBook.id;
     });
-    console.log(filteredBooks);
     const updatedBooks = [...filteredBooks, updatedBook];
-    console.log(updatedBooks);
     setBooks(updatedBooks);
   };
 
