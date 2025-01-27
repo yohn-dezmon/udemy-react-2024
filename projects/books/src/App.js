@@ -23,9 +23,19 @@ function App() {
     setBooks(updatedBooks);
   };
 
+  const updateBooks = (updatedBook) => {
+    // maybe filter out the book in question, then add back the updated one?
+
+    const filteredBooks = books.filter((book) => {
+      book.id !== updatedBook.id;
+    });
+    const updatedBooks = [...filteredBooks, updatedBook];
+    setBooks(updatedBooks);
+  };
+
   return (
     <div className="app">
-      <BookList books={books} onDelete={removeBookById} />
+      <BookList books={books} onDelete={removeBookById} onUpdate={updateBooks} />
       <BookCreate onCreate={createBook} />
     </div>
   );
