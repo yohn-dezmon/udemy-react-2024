@@ -10,3 +10,7 @@
 - for onSubmit, in your handler, that's where you update the book and then call onUpdate with the updated book obj
 
 # Updates after watching solution
+
+- he called the function onEdit which is more consistent with BookEdit's name
+- he points out that in large applications, passing a function through a bunch of components that don't actually use it leaves room for confusion 
+- 
