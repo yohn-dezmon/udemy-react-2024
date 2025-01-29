@@ -1,7 +1,7 @@
 import BookEdit from "./BookEdit";
 import { useState } from "react";
 
-function BookShow({ book, onDelete, onUpdate }) {
+function BookShow({ book, onDelete, onEdit }) {
   const [showEdit, setShowEdit] = useState(false);
   const handlDeleteClick = () => {
     onDelete(book.id);
@@ -9,15 +9,15 @@ function BookShow({ book, onDelete, onUpdate }) {
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
-  const handleUpdate = (updatedBook) => {
+  const handleUpdate = (id, title) => {
     setShowEdit(!showEdit);
-    onUpdate(updatedBook);
+    onEdit(id, title);
   };
   // conditional logic here...
   let content = <h3>{book.title}</h3>;
   if (showEdit) {
     content = (
-      <BookEdit showEdit={showEdit} book={book} onUpdate={handleUpdate} />
+      <BookEdit showEdit={showEdit} book={book} onEdit={handleUpdate} />
     );
   }
   return (

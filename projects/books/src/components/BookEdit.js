@@ -1,13 +1,10 @@
 import { useState } from "react";
-function BookEdit({ book, onUpdate }) {
+function BookEdit({ book, onEdit }) {
   // don't default this to book.title ... idk why
   const [title, setTitle] = useState(book.title);
   const handleSubmit = (event) => {
     event.preventDefault();
-    // book is a piece of state so I think this is necessary?
-    const updatedBook = { ...book, title: title };
-    onUpdate(updatedBook);
-    // we need to go back to displaying the BookShow though...
+    onEdit(book.id, title);
   };
 
   const handleChange = (event) => {
