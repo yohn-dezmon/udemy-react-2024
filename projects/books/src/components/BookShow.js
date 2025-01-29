@@ -9,15 +9,15 @@ function BookShow({ book, onDelete, onEdit }) {
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
-  const handleUpdate = (id, title) => {
-    setShowEdit(!showEdit);
+  const handleSubmit = (id, title) => {
     onEdit(id, title);
+    setShowEdit(!showEdit);
   };
   // conditional logic here...
   let content = <h3>{book.title}</h3>;
   if (showEdit) {
     content = (
-      <BookEdit showEdit={showEdit} book={book} onEdit={handleUpdate} />
+      <BookEdit showEdit={showEdit} book={book} onSubmit={handleSubmit} />
     );
   }
   return (
