@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
 
 function App() {
   const [books, setBooks] = useState([]);
+
+  const fetchBooks = async () => {
+    const response = await axios.get('http://localhost:3001/books')
+    setBooks(response.data);
+  };
+
+  useEffect(() => { fetchBooks(); }, []);
 
   const removeBookById = (id) => {
     const updatedBooks = books.filter((book) => {
@@ -12,15 +20,17 @@ function App() {
     setBooks(updatedBooks);
   };
 
-  const createBook = (title) => {
-    // Math.random() returns decimal between 0 and 1
-    // Math.random() * 9999 --> random number between 0 and 9999
-    // wrap in Math.round()
+  const createBook = async (title) => {
+    const response = await axios.post('http://localhost:3001/books', {
+      title
+    });
+    console.log(response);
     const updatedBooks = [
       ...books,
-      { id: Math.round(Math.random() * 9999), title },
+      response.data,
     ];
     setBooks(updatedBooks);
+    console.log(updatedBooks);
   };
 
   const editBookById = (id, title) => {
