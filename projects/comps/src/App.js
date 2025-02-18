@@ -1,10 +1,13 @@
 import Button from "./Button";
 
 function App() {
+  // you don't have to do outline={true} for boolean props
   return (
     <div>
       <div>
-        <Button>children text!</Button>
+        <Button outline rounded primary>
+          children text!
+        </Button>
       </div>
       <div>
         <Button>1</Button>
