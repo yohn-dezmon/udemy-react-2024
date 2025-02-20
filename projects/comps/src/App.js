@@ -5,21 +5,19 @@ function App() {
   return (
     <div>
       <div>
-        <Button outline rounded primary>
-          children text!
-        </Button>
+        <Button>primary</Button>
       </div>
       <div>
-        <Button>1</Button>
+        <Button>primary</Button>
       </div>
       <div>
-        <Button>2</Button>
+        <Button>primary</Button>
       </div>
       <div>
-        <Button>3</Button>
+        <Button>primary</Button>
       </div>
       <div>
-        <Button>4</Button>
+        <Button>primary</Button>
       </div>
     </div>
   );
