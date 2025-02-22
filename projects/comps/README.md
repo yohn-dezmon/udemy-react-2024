@@ -1,1 +1,5 @@
-This is a React Starter Project for use in Stephen Grider's courses on Udemy.
+# Vite
+
+`npm install`
+`npm install tailwindcss @tailwindcss/vite`
+`npm start`
