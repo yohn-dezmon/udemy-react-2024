@@ -1,0 +1,45 @@
+putting icons inside of the Button component.
+
+Use a third party library:
+
+- `react-icons`
+- give access to a ton of different icons
+- sets of icons
+
+`npm install --save-exact react-icons@4.6.0`
+
+You put the icon code within `<Button> ... </Button>`
+
+go to "react-icons.github.io/react-icons" for docs.
+
+you find the name of an icon and import it into your file:
+
+`import { GoBell } from 'react-icons/go';`
+
+```
+        <Button primary rounded outline>
+          <GoBell />
+          primary
+        </Button>
+```
+
+Making sure icon is dislpayed next to the text:
+
+- `flex` (tailwind class)
+- `items-center` (tailwind class)
+
+Giving some spacing next to your icon:
+`<GoBell className="mr-1" />`
+
+- margin, right, one...
+- for this we need some plain CSS so we can apply this to all icons (svg) within buttons
+- **tailwind can be combined with plain CSS** (!!!)
+
+
+```css
+button > svg {
+    margin-right: 5px;
+}
+```
+
+- the `>` means immediate child
